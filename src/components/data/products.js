@@ -6,7 +6,7 @@ const products = [
         stock: 50,
         category: "chico",
         img: "/img/ankara.webp",
-        description: "Té negro orgánico con jengibre, canela, cardamomo, clavo y anís.",
+        description: "Té negro orgánico con jengibre, canela, cardamomo, clavo y anís. Tamaño: 5 gramos.",
     },
     {
         id: 2,
@@ -15,7 +15,7 @@ const products = [
         stock: 50,
         category: "mediano",
         img: "/img/ankara.webp",
-        description: "Té negro orgánico con jengibre, canela, cardamomo, clavo y anís.",
+        description: "Té negro orgánico con jengibre, canela, cardamomo, clavo y anís. Tamaño: 10 gramos.",
     },
     {
         id: 3,
@@ -24,7 +24,7 @@ const products = [
         stock: 50,
         category: "grande",
         img: "/img/ankara.webp",
-        description: "Té negro orgánico con jengibre, canela, cardamomo, clavo y anís.",
+        description: "Té negro orgánico con jengibre, canela, cardamomo, clavo y anís. Tamaño: 20 gramos.",
     },
     {
         id: 4,
@@ -33,7 +33,7 @@ const products = [
         stock: 50,
         category: "chico",
         img: "/img/dublin.webp",
-        description: "Té verde orgánico con jengibre, caléndula y limón.",
+        description: "Té verde orgánico con jengibre, caléndula y limón. Tamaño: 5 gramos.",
     },
     {
         id: 5,
@@ -42,7 +42,7 @@ const products = [
         stock: 50,
         category: "mediano",
         img: "/img/dublin.webp",
-        description: "Té verde orgánico con jengibre, caléndula y limón.",
+        description: "Té verde orgánico con jengibre, caléndula y limón. Tamaño: 10 gramos.",
     },
     {
         id: 6,
@@ -51,7 +51,7 @@ const products = [
         stock: 50,
         category: "grande",
         img: "/img/dublin.webp",
-        description: "Té verde orgánico con jengibre, caléndula y limón.",
+        description: "Té verde orgánico con jengibre, caléndula y limón. Tamaño: 20 gramos.",
     },
     {
         id: 7,
@@ -60,7 +60,7 @@ const products = [
         stock: 50,
         category: "chico",
         img: "/img/londres.webp",
-        description: "Té negro orgánico con aroma a vainilla y canela.",
+        description: "Té negro orgánico con aroma a vainilla y canela. Tamaño: 5 gramos.",
     },
     {
         id: 8,
@@ -69,7 +69,7 @@ const products = [
         stock: 50,
         category: "mediano",
         img: "/img/londres.webp",
-        description: "Té negro orgánico con aroma a vainilla y canela.",
+        description: "Té negro orgánico con aroma a vainilla y canela. Tamaño: 10 gramos.",
     },
     {
         id: 9,
@@ -78,7 +78,7 @@ const products = [
         stock: 50,
         category: "grande",
         img: "/img/londres.webp",
-        description: "Té negro orgánico con aroma a vainilla y canela.",
+        description: "Té negro orgánico con aroma a vainilla y canela. Tamaño: 20 gramos.",
     },
     {
         id: 10,
@@ -87,7 +87,7 @@ const products = [
         stock: 50,
         category: "chico",
         img: "/img/moscu.webp",
-        description: "Té negro orgánico con frutos rojos y rosa mosqueta.",
+        description: "Té negro orgánico con frutos rojos y rosa mosqueta. Tamaño: 5 gramos.",
     },
     {
         id: 11,
@@ -96,7 +96,7 @@ const products = [
         stock: 50,
         category: "mediano",
         img: "/img/moscu.webp",
-        description: "Té negro orgánico con frutos rojos y rosa mosqueta.",
+        description: "Té negro orgánico con frutos rojos y rosa mosqueta. Tamaño: 10 gramos.",
     },
     {
         id: 12,
@@ -105,7 +105,7 @@ const products = [
         stock: 50,
         category: "grande",
         img: "/img/moscu.webp",
-        description: "Té negro orgánico con frutos rojos y rosa mosqueta.",
+        description: "Té negro orgánico con frutos rojos y rosa mosqueta. Tamaño: 20 gramos.",
     },
     {
         id: 13,
@@ -114,7 +114,7 @@ const products = [
         stock: 50,
         category: "chico",
         img: "/img/rabat.webp",
-        description: "Té verde orgánico con boldo, cedrón y miel.",
+        description: "Té verde orgánico con boldo, cedrón y miel. Tamaño: 5 gramos.",
     },
     {
         id: 14,
@@ -123,7 +123,7 @@ const products = [
         stock: 50,
         category: "mediano",
         img: "/img/rabat.webp",
-        description: "Té verde orgánico con boldo, cedrón y miel.",
+        description: "Té verde orgánico con boldo, cedrón y miel. Tamaño: 10 gramos.",
     },
     {
         id: 15,
@@ -132,7 +132,7 @@ const products = [
         stock: 50,
         category: "grande",
         img: "/img/rabat.webp",
-        description: "Té verde orgánico con boldo, cedrón y miel.",
+        description: "Té verde orgánico con boldo, cedrón y miel. Tamaño: 20 gramos.",
     },
     {
         id: 16,
@@ -141,7 +141,7 @@ const products = [
         stock: 50,
         category: "chico",
         img: "/img/varsovia.webp",
-        description: "Té negro orgánico con manzana, miel e hibiscus.",
+        description: "Té negro orgánico con manzana, miel e hibiscus. Tamaño: 5 gramos.",
     },
     {
         id: 17,
@@ -150,7 +150,7 @@ const products = [
         stock: 50,
         category: "mediano",
         img: "/img/varsovia.webp",
-        description: "Té negro orgánico con manzana, miel e hibiscus.",
+        description: "Té negro orgánico con manzana, miel e hibiscus. Tamaño: 10 gramos.",
     },
     {
         id: 18,
@@ -159,7 +159,7 @@ const products = [
         stock: 50,
         category: "grande",
         img: "/img/varsovia.webp",
-        description: "Té negro orgánico con manzana, miel e hibiscus.",
+        description: "Té negro orgánico con manzana, miel e hibiscus. Tamaño: 20 gramos.",
     },
     {
         id: 19,
@@ -168,7 +168,7 @@ const products = [
         stock: 50,
         category: "chico",
         img: "/img/wellington.webp",
-        description: "Té negro orgánico con flores de jazmín y naranja.",
+        description: "Té negro orgánico con flores de jazmín y naranja. Tamaño: 5 gramos.",
     },
     {
         id: 20,
@@ -177,7 +177,7 @@ const products = [
         stock: 50,
         category: "mediano",
         img: "/img/wellington.webp",
-        description: "Té negro orgánico con flores de jazmín y naranja.",
+        description: "Té negro orgánico con flores de jazmín y naranja. Tamaño: 10 gramos.",
     },
     {
         id: 21,
@@ -186,7 +186,7 @@ const products = [
         stock: 50,
         category: "grande",
         img: "/img/wellington.webp",
-        description: "Té negro orgánico con flores de jazmín y naranja.",
+        description: "Té negro orgánico con flores de jazmín y naranja. Tamaño: 20 gramos.",
     },
 ]
 

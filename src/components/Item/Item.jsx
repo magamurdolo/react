@@ -4,7 +4,7 @@ import ClickCounter from '../ClickCounter/ClickCounter';
 import "./item.css";
 
 
-function Item(product) {
+function Item({product}) {
     
     const [isFavorite, setIsFavorite] = useState (false);
     
@@ -20,11 +20,11 @@ function Item(product) {
         <div className='card'>
             <button onClick={handleFavorite} className={classButtonFavorite}>♡</button>
             <div className='card-img'>
-                <img src={product.imgurl} alt="Imagen producto" />
+                <img src={product.img} alt="Imagen producto" />
             </div>
             <div className='card-detail'>
                 <h2>{product.title}</h2>
-                <p>{product.detail}</p>
+                <p>{product.description}</p>
                 <h3 className='priceTag'>$ {product.price}</h3>
             </div>
             <ClickCounter/>

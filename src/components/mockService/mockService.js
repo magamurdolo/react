@@ -14,7 +14,7 @@ export function getSingleItemFromAPI (idParams) {
     return new Promise ((resolve, reject) => {
         setTimeout (()=>{
             let itemRequested = products.find(
-                (item) => item.id === Number(idParams));
+                (item) => item.id === parseInt(idParams));
 
             if (itemRequested){
                 resolve(itemRequested);}

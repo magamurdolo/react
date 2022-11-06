@@ -21,7 +21,7 @@ function ItemDetailContainer() {
             </div>
             <div className='card-detail'>
                 <h2>{product.title}</h2>
-                <p>{product.detail}</p>
+                <p>{product.description}</p>
                 <h3 className='priceTag'>$ {product.price}</h3>
             </div>
             <ClickCounter />
