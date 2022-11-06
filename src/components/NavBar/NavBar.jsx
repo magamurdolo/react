@@ -2,18 +2,23 @@ import React from 'react';
 import Button from '../Button/Button';
 import CartWidget from '../CartWidget/CartWidget';
 import "./navBar.css";
+import { Link } from 'react-router-dom';
 
 function NavBar() {
     return (
         <>
-            <h3>Tea Blends</h3>
+            <Link to="/"><h3>Tea Blends</h3></Link>
             <h4>Té orgánico en hebras</h4>
-            <Button text="Productos" />
-            <Button text="Envíos" />
-            <Button text="Iniciar sesión" />
-            <CartWidget/>
+            <div className='buttonFlex'>
+                <Button text="Productos" />
+                <Button text="Envíos" />
+                <Button text="Iniciar sesión" />
+                <button className='btn'> <Link to="/category/chico">Chico</Link></button>
+                <button className='btn'> <Link to="/category/mediano">Mediano</Link></button>
+                <button className='btn'> <Link to="/category/grande">Grande</Link></button>
+                <CartWidget />
+            </div>
         </>
-
     )
 }
 

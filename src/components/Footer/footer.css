@@ -1,0 +1,23 @@
+.footer {
+    grid-area: footer;
+    background-color: #083f08;
+    text-align: center;
+    background-image: linear-gradient(90deg, #0c5306 0%, #245611 32%, #317909 67%, #3c9a42 94%);
+    height: 70px;
+}
+
+footer ol {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+    list-style: none;
+}
+
+li {
+    margin-top: 10px;
+}
+
+.tamañoIconos {
+    height: 50px;
+    margin: 0px 7px;
+}
