@@ -10,9 +10,9 @@ function NavBar() {
             <Link to="/"><h3>Tea Blends</h3></Link>
             <h4>Té orgánico en hebras</h4>
             <div className='buttonFlex'>
-                <Button text="Productos" />
-                <Button text="Envíos" />
-                <Button text="Iniciar sesión" />
+                <Button>Productos</Button>
+                <Button>Envíos</Button>
+                <Button>Iniciar sesión</Button>
                 <button className='btn'> <Link to="/category/chico">Chico</Link></button>
                 <button className='btn'> <Link to="/category/mediano">Mediano</Link></button>
                 <button className='btn'> <Link to="/category/grande">Grande</Link></button>

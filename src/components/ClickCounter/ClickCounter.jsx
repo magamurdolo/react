@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./clickCounter.css";
+import Button from '../Button/Button'; 
 
-function ClickCounter(props) {
+function ClickCounter(props, onAddToCart) {
 
     const [cantidad, setCantidad] = useState(1);
     let stock = 50
@@ -18,17 +19,13 @@ function ClickCounter(props) {
         }
     }
 
-    function handleAddToCart() {
-        console.log("Agregado al carrito.")
-    }
-
     return (
         <div className="counterFlex">
-            <button className='btn' onClick={handleDecrement}>-</button>
+            <Button className='btn' onClick={handleDecrement}>-</Button>
             <p>{cantidad}</p>
-            <button className='btn' onClick={handleIncrement}>+</button>
+            <Button className='btn' onClick={handleIncrement}>+</Button>
             <br />
-            <button className='btn' onClick={handleAddToCart}>Agregar al carrito</button>
+            <Button className='btn' onClick={()=>onAddToCart(cantidad)}>Agregar al carrito</Button>
         </div>
     )
 }

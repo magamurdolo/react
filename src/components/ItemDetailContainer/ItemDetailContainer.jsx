@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { getSingleItemFromAPI } from '../mockService/mockService';
-import ClickCounter from '../ClickCounter/ClickCounter';
 import { useParams } from 'react-router-dom';
+import ItemDetail from './ItemDetail';
 
 function ItemDetailContainer() {
     const [product, setProduct] = useState([]);
 
-    let {id} = useParams();
+    let id = useParams().id;
 
     useEffect(() => {
         getSingleItemFromAPI(id).then((itemsDB) => {
@@ -14,18 +14,6 @@ function ItemDetailContainer() {
         }).catch (error => alert (error));
     }, [id]);
 
-    return (
-            <div className='card'>
-            <div className='card-img'>
-                <img src={product.img} alt="Imagen producto" />
-            </div>
-            <div className='card-detail'>
-                <h2>{product.title}</h2>
-                <p>{product.description}</p>
-                <h3 className='priceTag'>$ {product.price}</h3>
-            </div>
-            <ClickCounter />
-        </div>
-    )
+    return <ItemDetail product={product}/>;
 }
 export default ItemDetailContainer;
