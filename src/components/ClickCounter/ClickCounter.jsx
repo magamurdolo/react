@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./clickCounter.css";
 import Button from '../Button/Button'; 
 
-function ClickCounter(props, onAddToCart) {
+function ClickCounter({props, onAddToCart}) {
 
     const [cantidad, setCantidad] = useState(1);
     let stock = 50

@@ -1,12 +1,17 @@
 import React from 'react'
 import Item from '../Item/Item';
 import FlexWrapper from '../FlexWrapper/FlexWrapper';
+import Loader from '../Loader/Loader';
 
 function ItemList(props) {
+    let emptyArray = props.productsList.length === 0;
     return (
         <div>
             <FlexWrapper>
-                {props.productsList.map((product) => (
+                {emptyArray ? (
+                    <Loader/>
+                ) : (
+                    props.productsList.map((product) => (
                         <Item
                             key={product.id}
                             title={product.title}
@@ -17,7 +22,7 @@ function ItemList(props) {
                             product={product}
                         />
                     ))
-                }
+                )}
             </FlexWrapper>
         </div>
     )

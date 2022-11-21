@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
-import ClickCounter from '../ClickCounter/ClickCounter';
 import "./item.css";
 
 
@@ -25,9 +24,12 @@ function Item({product}) {
             <div className='card-detail'>
                 <h2>{product.title}</h2>
                 <p>{product.description}</p>
-                <h3 className='priceTag'>$ {product.price}</h3>
+                <p>{product.discount}</p>
+                {product.discount && (
+                    <h4 className='offer'>Descuento: {product.discount}% </h4>
+                )}
+                <h4 style={{color: product.discount? 'green' : 'inherit'}} className="priceTag">$ {product.price}</h4>
             </div>
-            <ClickCounter/>
             <Link to={urlDetail}><button className='btn'>Ver más</button></Link>
         </div>
     );

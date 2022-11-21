@@ -6,6 +6,7 @@ const products = [
         stock: 50,
         category: "chico",
         img: "/img/ankara.webp",
+        discount: 30,
         description: "Té negro orgánico con jengibre, canela, cardamomo, clavo y anís. Tamaño: 5 gramos.",
     },
     {
@@ -33,6 +34,7 @@ const products = [
         stock: 50,
         category: "chico",
         img: "/img/dublin.webp",
+        discount: 60,
         description: "Té verde orgánico con jengibre, caléndula y limón. Tamaño: 5 gramos.",
     },
     {
