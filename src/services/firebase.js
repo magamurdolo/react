@@ -12,6 +12,7 @@ import {
     addDoc,
     writeBatch,
     documentId,
+    orderBy,
 } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -53,7 +54,8 @@ export async function getSingleItemFromAPI(id) {
 export async function getItemsFromAPI() {
     try {
         const collectionProducts = collection(DB, "products");
-        let respuesta = await getDocs(collectionProducts);
+        const myQuery = query(collectionProducts, orderBy("position"));
+        let respuesta = await getDocs(myQuery);
 
         const products = respuesta.docs.map((docu) => {
             return {
@@ -70,7 +72,7 @@ export async function getItemsFromAPI() {
 
 export async function getItemsFromAPIByCategory(categoryId) {
     const productsRef = collection(DB, "products");
-    const myQuery = query(productsRef, where("category", "==", categoryId));
+    const myQuery = query(productsRef, where("category", "==", categoryId), orderBy("position"));
 
     const productsSnapshot = await getDocs(myQuery);
 
@@ -124,6 +126,7 @@ export async function createBuyOrderFirestoreWithStock(buyOrderData) {
     const products = [
         {
             id: 1,
+            position: 1,
             title: "Ankara",
             price: 100,
             stock: 50,
@@ -134,6 +137,7 @@ export async function createBuyOrderFirestoreWithStock(buyOrderData) {
         },
         {
             id: 2,
+            position: 2,
             title: "Ankara",
             price: 200,
             stock: 50,
@@ -143,6 +147,7 @@ export async function createBuyOrderFirestoreWithStock(buyOrderData) {
         },
         {
             id: 3,
+            position: 3,
             title: "Ankara",
             price: 300,
             stock: 50,
@@ -152,6 +157,7 @@ export async function createBuyOrderFirestoreWithStock(buyOrderData) {
         },
         {
             id: 4,
+            position: 4,
             title: "Dublín",
             price: 100,
             stock: 50,
@@ -162,6 +168,7 @@ export async function createBuyOrderFirestoreWithStock(buyOrderData) {
         },
         {
             id: 5,
+            position: 5,
             title: "Dublín",
             price: 200,
             stock: 50,
@@ -171,6 +178,7 @@ export async function createBuyOrderFirestoreWithStock(buyOrderData) {
         },
         {
             id: 6,
+            position: 6,
             title: "Dublín",
             price: 300,
             stock: 50,
@@ -180,6 +188,7 @@ export async function createBuyOrderFirestoreWithStock(buyOrderData) {
         },
         {
             id: 7,
+            position: 7,
             title: "Londres",
             price: 100,
             stock: 50,
@@ -189,6 +198,7 @@ export async function createBuyOrderFirestoreWithStock(buyOrderData) {
         },
         {
             id: 8,
+            position: 8,
             title: "Londres",
             price: 200,
             stock: 50,
@@ -198,6 +208,7 @@ export async function createBuyOrderFirestoreWithStock(buyOrderData) {
         },
         {
             id: 9,
+            position: 9,
             title: "Londres",
             price: 300,
             stock: 50,
@@ -207,6 +218,7 @@ export async function createBuyOrderFirestoreWithStock(buyOrderData) {
         },
         {
             id: 10,
+            position: 10,
             title: "Moscú",
             price: 100,
             stock: 50,
@@ -216,6 +228,7 @@ export async function createBuyOrderFirestoreWithStock(buyOrderData) {
         },
         {
             id: 11,
+            position: 11,
             title: "Moscú",
             price: 200,
             stock: 50,
@@ -225,6 +238,7 @@ export async function createBuyOrderFirestoreWithStock(buyOrderData) {
         },
         {
             id: 12,
+            position: 12,
             title: "Moscú",
             price: 300,
             stock: 50,
@@ -234,6 +248,7 @@ export async function createBuyOrderFirestoreWithStock(buyOrderData) {
         },
         {
             id: 13,
+            position: 13,
             title: "Rabat",
             price: 100,
             stock: 50,
@@ -243,6 +258,7 @@ export async function createBuyOrderFirestoreWithStock(buyOrderData) {
         },
         {
             id: 14,
+            position: 14,
             title: "Rabat",
             price: 200,
             stock: 50,
@@ -252,6 +268,7 @@ export async function createBuyOrderFirestoreWithStock(buyOrderData) {
         },
         {
             id: 15,
+            position: 15,
             title: "Rabat",
             price: 300,
             stock: 50,
@@ -261,6 +278,7 @@ export async function createBuyOrderFirestoreWithStock(buyOrderData) {
         },
         {
             id: 16,
+            position: 16,
             title: "Varsovia",
             price: 100,
             stock: 50,
@@ -270,6 +288,7 @@ export async function createBuyOrderFirestoreWithStock(buyOrderData) {
         },
         {
             id: 17,
+            position: 17,
             title: "Varsovia",
             price: 200,
             stock: 50,
@@ -279,6 +298,7 @@ export async function createBuyOrderFirestoreWithStock(buyOrderData) {
         },
         {
             id: 18,
+            position: 18,
             title: "Varsovia",
             price: 300,
             stock: 50,
@@ -288,6 +308,7 @@ export async function createBuyOrderFirestoreWithStock(buyOrderData) {
         },
         {
             id: 19,
+            position: 19,
             title: "Wellington",
             price: 100,
             stock: 50,
@@ -297,6 +318,7 @@ export async function createBuyOrderFirestoreWithStock(buyOrderData) {
         },
         {
             id: 20,
+            position: 20,
             title: "Wellington",
             price: 200,
             stock: 50,
@@ -306,6 +328,7 @@ export async function createBuyOrderFirestoreWithStock(buyOrderData) {
         },
         {
             id: 21,
+            position: 21,
             title: "Wellington",
             price: 300,
             stock: 50,
@@ -318,5 +341,6 @@ export async function createBuyOrderFirestoreWithStock(buyOrderData) {
     const collectionRef = collection (DB, "products")
     for (let product of products){
         const docRef = await addDoc (collectionRef, product);
+        console.log("document", docRef.id)
     }
 }*/

@@ -13,9 +13,9 @@ function NavBar() {
                 <Button><Link to="/">Productos</Link></Button>
                 <Button>Envíos</Button>
                 <Button>Iniciar sesión</Button>
-                <button className='btn'> <Link to="/category/chico">Chico</Link></button>
-                <button className='btn'> <Link to="/category/mediano">Mediano</Link></button>
-                <button className='btn'> <Link to="/category/grande">Grande</Link></button>
+                <Button><Link to="/category/chico"> Chico</Link></Button>
+                <Button><Link to="/category/mediano">Mediano</Link></Button>
+                <Button><Link to="/category/grande">Grande</Link></Button>
                 <CartWidget />
             </div>
         </>

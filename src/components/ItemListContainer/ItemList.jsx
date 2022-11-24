@@ -25,7 +25,7 @@ function ItemList(props) {
                                 product={product}
                             />
                         ))
-                    )};
+                    )}
             </FlexWrapper>
         </div>
     )
