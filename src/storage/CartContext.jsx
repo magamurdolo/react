@@ -36,27 +36,30 @@ export function CartContextProvider(props) {
         return total;
     }
 
-    /*
-    function totalPriceInCart (){
-
+    function totalPriceInCart () {
+        let totalPrice = 0;
+        cart.forEach((itemInCart) => {
+            totalPrice = totalPrice + itemInCart.quantity * itemInCart.price;
+        });
+        return totalPrice;
     }
 
-    function removeItem (itemId) {
+    /*function removeItem (itemId) {
         cart.filter
-    }
+    }*/
     
     function clear (){
-
+        setCart ([]);
     }
-    */
+    
 
     const value = {
         cart,
         addToCart,
         totalItemsInCart,
-        //totalPriceInCart,
+        totalPriceInCart,
         //removeItem,
-        //clear,
+        clear,
     }
 
     return (

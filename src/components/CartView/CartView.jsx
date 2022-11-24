@@ -1,30 +1,70 @@
 import React, { useContext } from 'react';
+import { createBuyOrderFirestoreWithStock } from '../../services/firebase';
 import cartContext from '../../storage/CartContext';
 import Button from '../Button/Button';
+import Swal from 'sweetalert2';
+import { Link, useNavigate } from 'react-router-dom';
+import "./cartView.css";
 
 function CartView() {
     const { cart, removeItem, totalPriceInCart, clear } = useContext(cartContext);
+    const navigate = useNavigate();
 
-    if (cart.length === 0) return <h1>Carrito vacío</h1>;
+    if (cart.length === 0) 
+    return <>
+    <h1>Carrito vacío</h1>
+    <Link to="/">
+        <Button>Volver al catálogo</Button>
+    </Link>
+    </>
+
+    function createBuyOrder () {
+        const buyData = {
+            buyer : {
+                name: "marge",
+                phone: "345",
+                email: "maga@gmail.com"
+            },
+            items: cart,
+            total: totalPriceInCart(),
+            date: new Date(),
+        };
+
+        createBuyOrderFirestoreWithStock(buyData).then ( (orderId) =>{
+            console.log (orderId);
+            clear ();
+            navigate (`/checkout/${orderId}`);
+
+            Swal.fire ({
+                title: `Gracias por tu compra.`,
+                text: `El identificador de tu orden es ${orderId}`,
+                icon: "success",
+            });
+        });
+    }
 
     return (
         <div>
             <h1>Mi carrito:</h1>
 
-            {cart.map(cartItem => (
-                <div key={cartItem.id}>
-                    <img src={cartItem.img} alt={cartItem.title}/>
+            {cart.map((cartItem) => (
+                <div className='productInCart' key={cartItem.id}>
+                    <img src={cartItem.img} alt={cartItem.title} className='imgInCart'/>
                     <h3>{cartItem.title}</h3>
-                    <h4>{cartItem.price}</h4>
+                    <h4>$ {cartItem.price}</h4>
                     <h4>Cantidad: {cartItem.quantity}</h4>
-                    <h4>Precio: {cartItem.quantity * cartItem.price}</h4>
-                    <Button /*onClick= () => {removeItem(cartItem.id)}*/>X</Button>
+                    <h4>Precio: $ {cartItem.quantity * cartItem.price}</h4>
+                    <Button onClick={() => removeItem(cartItem.id)}>X</Button>
+                    <br /><br />
                 </div>
             ))}
-            <Button /*onClick={clear}*/>Vaciar carrito</Button>
+    
+            <Button onClick={clear}>Vaciar carrito</Button>
+            <Button><Link to="/">Volver a productos</Link></Button>
+            <Button onClick={createBuyOrder}>Finalizar compra</Button>
             <h2>Total a pagar: $ {totalPriceInCart()}</h2>
         </div>
-    )
+    );
 }
 
-export default CartView
+export default CartView;

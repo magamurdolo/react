@@ -4,11 +4,17 @@ import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import cartContext from '../../storage/CartContext';
 import { Link } from 'react-router-dom';
+import Button from '../Button/Button';
 
 function ItemDetail({ product }) {
     const [isInCart, setIsInCart] = useState(false);
     const navigate = useNavigate();
-    const {addToCart} = useContext (cartContext);
+    const {cart, addToCart} = useContext (cartContext);
+
+    let itemInCart = cart.find (item => product.id === item.id);
+    let stock = product.stock;
+    if (itemInCart) stock -= itemInCart.quantity;
+    
 
     function onAddToCart(quantity) {
         Swal.fire({
@@ -36,7 +42,7 @@ function ItemDetail({ product }) {
     }
 
     return (
-        <div className='card'>
+        <div className='cardItemDetail'>
             <div className='card-img'>
                 <img src={product.img} alt="Imagen producto" />
             </div>
@@ -47,16 +53,12 @@ function ItemDetail({ product }) {
             </div>
             {isInCart ? (
                 <>
-                <Link to="/cart">
-                    <button>Ir al carrito</button>
-                    </Link>
-                    <button>Volver al catálogo</button>
-                    <button>Quitar del carrito</button>
+                    <Button><Link to="/">Volver al catálogo</Link></Button>
                 </>
             ) : (
                 <ClickCounter
                     onAddToCart={onAddToCart} 
-                    stock={product.stock}/>
+                    stock={stock}/>
             )}
         </div>
     );

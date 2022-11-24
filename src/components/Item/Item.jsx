@@ -24,7 +24,7 @@ function Item({product}) {
             <div className='card-detail'>
                 <h2>{product.title}</h2>
                 <p>{product.description}</p>
-                <p>{product.discount}</p>
+                
                 {product.discount && (
                     <h4 className='offer'>Descuento: {product.discount}% </h4>
                 )}

@@ -1,0 +1,18 @@
+.imgInCart {
+    height: 300px;
+    padding: 10px;
+    border-radius: 200px;
+}
+
+.productInCart {
+    background-color: #a5dc86;
+    border-radius: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.productInCart h4 {
+    width: 10vw;
+}
