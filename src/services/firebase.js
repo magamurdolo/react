@@ -76,7 +76,7 @@ export async function getItemsFromAPIByCategory(categoryId) {
 
     const productsSnapshot = await getDocs(myQuery);
 
-    const emptyArray = productsSnapshot.doc.length < 1;
+    const emptyArray = productsSnapshot.docs.length < 1;
     if (emptyArray) throw new Error ("Categoría sin resultados");
 
     const products = productsSnapshot.docs.map((docu) => {

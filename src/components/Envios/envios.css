@@ -1,0 +1,15 @@
+.alturaMainEnvios {
+    height: 600px;
+}
+
+.mainEnvios {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    text-align: center;
+    margin: 15px auto;
+    background-color: #9ff195;
+    max-width: 550px;
+    border-radius: 35px;
+    color: #317909;
+}

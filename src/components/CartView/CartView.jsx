@@ -19,26 +19,21 @@ function CartView() {
             </Link></Button>
         </>
 
-    function createBuyOrder() {
+    function createBuyOrder(userData) {
         const buyData = {
-            buyer: {
-                name: "marge",
-                phone: "345",
-                email: "maga@gmail.com"
-            },
+            buyer: userData,
             items: cart,
             total: totalPriceInCart(),
             date: new Date(),
         };
 
         createBuyOrderFirestoreWithStock(buyData).then((orderId) => {
-            console.log(orderId);
             clear();
             navigate(`/checkout/${orderId}`);
 
             Swal.fire({
-                title: `Gracias por tu compra.`,
-                text: `El identificador de tu orden es ${orderId}`,
+                title: `Gracias por tu compra!`,
+                text: `El identificador de tu compra es: ${orderId}`,
                 icon: "success",
             });
         });
@@ -61,7 +56,7 @@ function CartView() {
             ))}
 
             <Button onClick={clear}>Vaciar carrito</Button>
-            <Button><Link to="/">Volver al catálogo</Link></Button>
+            <Button><Link to="/">Seguir comprando</Link></Button>
             <h2>Total a pagar: $ {totalPriceInCart()}</h2>
 
             <BuyForm onSubmit={createBuyOrder} />

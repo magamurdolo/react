@@ -6,6 +6,10 @@ import Footer from './components/Footer/Footer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CartContextProvider } from './storage/CartContext';
 import CartView from './components/CartView/CartView';
+import Error from './components/Error/Error';
+import Checkout from './components/Checkout/Checkout';
+import Envios from './components/Envios/Envios';
+import IniciarSesion from './components/IniciarSesion/IniciarSesion';
 
 function App() {
   return (
@@ -18,8 +22,10 @@ function App() {
           <Route path="/category/:categoryid" element={<ItemListContainer/>} />
           <Route path="/detalle/:id" element={<ItemDetailContainer/>}/>
           <Route path="/cart" element={<CartView/>}/>
-          <Route path="/checkout/:orderid" element={<h1>Gracias por tu compra!</h1>}/>
-          <Route path="*" element={ <h1>404: Ruta no encontrada</h1>}/>
+          <Route path="/checkout/:orderid" element={<Checkout/>}/>
+          <Route path="/envios" element={<Envios/>}/>
+          <Route path="/iniciarSesion" element={<IniciarSesion/>}/>
+          <Route path="*" element={<Error/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>

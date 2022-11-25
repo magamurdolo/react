@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import cartContext from '../../storage/CartContext';
 import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
+import { getQueriesForElement } from '@testing-library/react';
 
 function ItemDetail({ product }) {
     const [isInCart, setIsInCart] = useState(false);

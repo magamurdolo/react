@@ -39,7 +39,7 @@ function ItemListContainer() {
 
   return (
     <>
-      <h1>Bienvenidos!!</h1>
+      <h1>Té orgánico en hebras</h1>
       <ItemList feedbackMsg={feedbackMsg} productsList={productsList} />
     </>
   )
